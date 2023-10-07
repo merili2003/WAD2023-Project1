@@ -1,23 +1,21 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="res/images/favicon.png">
     <link rel="stylesheet" href="res/css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Unbounded">
     <title>HW1</title>
-  </head>
-  <body>
-    <header>
-        <div class="Button-container">
-            <button onclick="window.location.href='index.html';">
-                Home
-            </button>
-            <p class="Button-separator">|</p>
-            <button onclick="window.location.href='addPost.html';">
-                addPost
-            </button>
+
+</head>
+
+<body>
+    <header class="nav-bar">
+        <div class="nav-links-wrapper">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="addPost.html" class="nav-link">Add Post</a>
         </div>
         <div class="Image-container">
             <a href="login.html">
@@ -25,13 +23,14 @@
             </a>
         </div>
     </header>
+
     <div id="Content-container">
         <div class="Left-padding"></div>
 
         <div class="Posts-container">
-
+            <!-- Posts from Code2 -->
             <div class="Post">
-                <header>
+                <header class="post-header">
                     <img src="res/images/pfp.png" alt="Profile picture">
                     <p>Dec 24, 1530</p>
                 </header>
@@ -40,30 +39,30 @@
                     <p>ancient photo captured by my granny</p>
                 </div>
                 <footer>
-                    <button>
+                    <button class="indexlike">
                         <img src="res/images/like.png" alt="Like">
                     </button>
                 </footer>
             </div>
 
             <div class="Post">
-                <header>
+                <header class="post-header">
                     <img src="res/images/pfp.png" alt="Profile picture">
                     <p>Jan 01, 2030</p>
                 </header>
                 <div class="Post-content">
-                    <img src="res/images/milky way.jpg" alt="Milky Way">
+                    <img src="res/images/milky_way.jpg" alt="Milky Way">
                     <p>proof that the best photos are taken with the nokia 5110</p>
                 </div>
                 <footer>
-                    <button>
+                    <button class="indexlike">
                         <img src="res/images/like.png" alt="Like">
                     </button>
                 </footer>
             </div>
 
             <div class="Post">
-                <header>
+                <header class="post-header">
                     <img src="res/images/pfp.png" alt="Profile picture">
                     <p>Oct 60, 3000</p>
                 </header>
@@ -73,7 +72,7 @@
                     </p>
                 </div>
                 <footer>
-                    <button>
+                    <button class="indexlike">
                         <img src="res/images/like.png" alt="Like">
                     </button>
                 </footer>
@@ -91,7 +90,7 @@
                     </p>
                 </div>
                 <footer>
-                    <button>
+                    <button class="indexlike">
                         <img src="res/images/like.png" alt="Like">
                     </button>
                 </footer>
@@ -106,18 +105,19 @@
                     <p>#iwadabest</p>
                 </div>
                 <footer>
-                    <button>
+                    <button class="indexlike">
                         <img src="res/images/like.png" alt="Like">
                     </button>
                 </footer>
             </div>
-
         </div>
-        
+
         <div class="Right-padding"></div>
     </div>
-    <footer>
 
+    <footer>
+        <!-- add footer content here -->
     </footer>
-  </body>
+</body>
+
 </html>

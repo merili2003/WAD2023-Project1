@@ -1,13 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="res/images/favicon.png">
     <link rel="stylesheet" href="res/css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Unbounded">
-    <title>HW1</title>
-  </head>
-  <body>
-  </body>
+    <script src="res/javascript.js" defer></script>
+    <title>Login</title>
+</head>
+
+<body>
+    <header id="main-header">
+        <nav class="nav-bar">
+            <div class="nav-links-wrapper">
+                <a href="index.html" class="nav-link">Home</a>
+            </div>
+            <div class="Image-container">
+                <a href="login.html">
+                    <img src="res/images/pfp.png" alt="User Profile Picture">
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="login-box AddPost-form-container">
+        <h2>Login</h2>
+
+        <form id="loginForm">
+          <div class="Form-field">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required>
+        </div>
+        
+        <div class="Form-field">
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required>
+        </div>
+        
+
+            <button type="submit" class="login-button">Login</button>
+        </form>
+
+        <p>Don't have an account? <a href="signup.html" class="blue-link">Sign Up</a></p>
+        <p class="error-message" id="error-message"></p>
+    </div>
+
+    <footer>
+        <!-- Add footer contents if any -->
+    </footer>
+
+    <script src="res/js/script.js"></script>
+</body>
+
 </html>
