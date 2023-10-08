@@ -37,7 +37,9 @@ body {
     overflow-y: scroll;
     color: var(--text-color);
     text-shadow: var(--text-shadow);
+    display: block;
 }
+
 
 .nav-bar, body > footer {
     display: flex;
@@ -60,6 +62,12 @@ body {
     text-shadow: 0 0 20px var(--text-shadow-color), 0 0 10px var(--text-shadow-color);
     color: lightskyblue;
 }
+
+.nav-links-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 
 .Posts-container {
     display: flex;
@@ -183,9 +191,6 @@ header .Image-container:hover img {
 }
 /* Base Styles */
 
-body {
-    display: block;
-}
 
 .nav-link {
     display: inline-block;
@@ -230,8 +235,10 @@ body {
 }
 
 .AddPost-form-container {
-    width: 30vw;
-    height: 40vh;
+    max-width: 600px; /* 600px is just an example, you can set it to what looks good for you */
+    min-height: 320px;
+    width: 90%;
+    height: auto; /* Let's make it auto so it fits content */
     background-color: var(--post-bg-color);
     margin: 0 auto;
     box-shadow: var(--post-shadow);
@@ -271,15 +278,26 @@ body {
     border-radius: var(--post-border-radius);
     cursor: pointer;
     transition: background-color 0.3s ease;
-    position: absolute;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
 }
+
 
 .AddPost-form-container button:hover {
     background-color: rgba(0, 0, 255, 0.7);
 }
+
+.AddPost-form-container .create-post-btn {
+    padding: 10px 20px;
+    background-color: rgba(25, 25, 112, 0.75);
+    color: var(--text-color);
+    border: none;
+    border-radius: var(--post-border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 .textarea-group label, 
 .textarea-group textarea {
@@ -395,11 +413,11 @@ body {
 }
 
 .Form-field label {
-    width: 100px; 
-    margin-right: 60px; 
+    width: auto;
+    margin-right: 15px;
     box-sizing: content-box;
-    white-space: nowrap;
 }
+
 
 .Form-field input {
     flex: 1; 
