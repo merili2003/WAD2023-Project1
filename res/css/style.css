@@ -1,193 +1,428 @@
+/* Root variables for general theming and consistent style references */
 :root {
-    --text-color: rgb(249, 249, 249);
-    --text-shadow-color: midnightblue;
-    --text-shadow: 3px 3px 4px var(--text-shadow-color);
+    /* Text styles */
+    --text-color: rgb(249, 249, 249);  /* General text color */
+    --text-shadow-color: midnightblue;  /* Color for text shadows */
+    --text-shadow: 3px 3px 4px var(--text-shadow-color);  /* General text shadow style */
 
-    --main-bg-color: black;
-    --main-header-footer-color: rgba(0, 0, 0, 0.75);
-    --main-header-footer-shadow-color: midnightblue;
-    --main-header-footer-shadow: inset 0px 0px 10px 0px var(--main-header-footer-shadow-color);
-    --header-button-color: rgba(0, 0, 0, 0);
-    --header-button-color-hover: rgba(25, 25, 112, 0.75);
-    --header-footer-border-radius: 0px;
+    /* Main background and header/footer styles */
+    --main-bg-color: black;  /* Main background color */
+    --main-header-footer-color: rgba(0, 0, 0, 0.75);  /* Background color for headers/footers */
+    --main-header-footer-shadow-color: midnightblue;  /* Color for header/footer shadows */
+    --main-header-footer-shadow: inset 0px 0px 10px 0px var(--main-header-footer-shadow-color);  /* Header/Footer shadow style */
+    --header-button-color: rgba(0, 0, 0, 0);  /* Initial color for header buttons */
+    --header-button-color-hover: rgba(25, 25, 112, 0.75);  /* Hover color for header buttons */
+    --header-footer-border-radius: 0px;  /* Border radius for headers and footers */
 
-    --paddings-color: rgba(0, 0, 0, 0.25);
-    --paddings-shadow-color: midnightblue;
-    --paddings-shadow: inset 0px 0px 10px 0px var(--paddings-shadow-color);
-    --paddings-border-radius: 5px;
+    /* Padding related styles */
+    --paddings-color: rgba(0, 0, 0, 0.25);  /* Background color for paddings */
+    --paddings-shadow-color: midnightblue;  /* Color for padding shadows */
+    --paddings-shadow: inset 0px 0px 10px 0px var(--paddings-shadow-color);  /* Padding shadow style */
+    --paddings-border-radius: 5px;  /* Border radius for paddings */
 
-    --post-bg-color: rgba(0, 0, 0, 0.5);
-    --post-shadow-color: midnightblue;
-    --post-shadow: inset 0px 0px 10px 0px var(--post-shadow-color);
-    --like-button-color: rgba(0, 0, 0, 0);
-    --like-button-color-hover: rgba(25, 25, 112, 0.75);
-    --post-border-radius: 5px;
+    /* Post related styles */
+    --post-bg-color: rgba(0, 0, 0, 0.5);  /* Post background color */
+    --post-shadow-color: midnightblue;  /* Color for post shadows */
+    --post-shadow: inset 0px 0px 10px 0px var(--post-shadow-color);  /* Post shadow style */
+    --like-button-color: rgba(0, 0, 0, 0);  /* Initial color for like buttons in posts */
+    --like-button-color-hover: rgba(25, 25, 112, 0.75);  /* Hover color for like buttons in posts */
+    --post-border-radius: 5px;  /* Border radius for posts */
 
+    /* Background image for the entire site */
     --background-image: url("../images/space.webp");
 }
-* {
-    text-shadow: var(--text-shadow);
-    color: var(--text-color);
-}
-body * {
-    display: flex;
-    font-family: 'Unbounded', monospace;
-}
+
+/* Styles for the body element */
 body {
-    margin: 0;
-    flex-direction: column;
-    background-image: var(--background-image);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100vw 100vh;
-    background-color: var(--main-bg-color);
-    overflow-y: scroll;
-}
-/* Hide scrollbar for Chrome, Safari and Opera */
-body::-webkit-scrollbar {
-    display: none;
-}
-/* Hide scrollbar for IE, Edge and Firefox */
-body {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-}
-body > header {
-    flex-direction: row;
-    max-width: 100vw;
-    justify-content: space-between;
-    background-color: var(--main-header-footer-color);
-    padding: 5px 5px 5px 5px;
-    margin-bottom: 5px;
-    min-height: 75px;
-    align-items: center;
-    font-size: 25px;
-    border-radius: var(--header-footer-border-radius);
-    box-shadow: var(--main-header-footer-shadow);
-}
-body > footer {
-    flex-direction: row;
-    max-width: 100vw;
-    justify-content: space-between;
-    background-color: var(--main-header-footer-color);
-    padding: 5px 5px 5px 5px;
-    margin-top: 5px;
-    min-height: 75px;
-    align-items: center;
-    border-radius: var(--header-footer-border-radius);
-    box-shadow: var(--main-header-footer-shadow);
-}
-#Content-container {
-    flex-direction: row;
-    justify-content: space-between;
-    max-width: 100vw;
-}
-.Button-container {
-    flex-direction: row;
+    margin: 0;  /* Remove default margin */
+    font-family: 'Unbounded', monospace;  /* Set default font family */
+    background-image: var(--background-image);  /* Use the background image defined in root */
+    background-repeat: no-repeat;  /* Ensure the background image doesn't repeat */
+    background-attachment: fixed;  /* Fix background position during scrolling */
+    background-size: 100vw 100vh;  /* Adjust background image size to cover viewport */
+    background-color: var(--main-bg-color);  /* Set background color */
+    overflow-y: scroll;  /* Allow vertical scrolling */
+    color: var(--text-color);  /* Apply text color */
+    text-shadow: var(--text-shadow);  /* Apply text shadow */
+    display: block;  /* Ensure the body displays as a block element */
 }
 
-.Button-container button {
-    align-items: center;
-    font-size: 25px;
-    background-color: var(--header-button-color);
-    border: none;
+/* Styles for the navigation bar and footer */
+.nav-bar, body > footer {
+    display: flex;  /* Use flexbox layout */
+    justify-content: space-between;  /* Space out flex items on the main axis */
+    align-items: center;  /* Center items vertically */
+    padding: 5px;  /* Add padding */
+    background-color: var(--main-header-footer-color);  /* Apply background color */
+    box-shadow: var(--main-header-footer-shadow);  /* Apply shadow */
+    border-radius: var(--header-footer-border-radius);  /* Round the corners */
 }
-.Button-container button:hover {
-    transition-duration: 0.3s;
-    background-color: var(--header-button-color-hover);
+
+/* Styles for the navigation links */
+.nav-link {
+    text-decoration: none;  /* Remove underlines */
+    color: var(--text-color);  /* Set text color */
+    padding: 0 10px;  /* Add horizontal padding */
+    transition: text-shadow 0.3s, color 0.3s;  /* Smoothly transition shadow and color on hover */
 }
-.Image-container {
-    flex-direction: row;
+
+/* Styles for hovered or focused navigation links and blue links */
+.nav-link:hover, .blue-link:focus {
+    text-shadow: 0 0 20px var(--text-shadow-color), 0 0 10px var(--text-shadow-color);  /* Apply glowing text shadow */
+    color: lightskyblue;  /* Change the text color */
 }
-.Left-padding {
-    flex-direction: column;
-    width: 10vw;
-    background-color: var(--paddings-color);
-    margin-left: 5px;
-    min-width: 100px;
-    box-shadow: var(--paddings-shadow);
-    border-radius: var(--paddings-border-radius);
+
+/* Styles for the container wrapping navigation links */
+.nav-links-wrapper {
+    display: flex;  /* Use flexbox layout */
+    flex-wrap: wrap;  /* Allow items to wrap to next line if necessary */
 }
-.Right-padding {
-    flex-direction: column;
-    width: 10vw;
-    background-color: var(--paddings-color);
-    margin-right: 5px;
-    min-width: 100px;
-    box-shadow: var(--paddings-shadow);
-    border-radius: var(--paddings-border-radius);
-}
+
+/* Styles for the container holding posts */
 .Posts-container {
-    flex-direction: column;
-    width: 70vw;
-    max-width: 600px;
+    display: flex;  /* Use flexbox layout */
+    flex-direction: column;  /* Stack flex items vertically */
+    width: 70vw;  /* Set width relative to viewport width */
+    max-width: 600px;  /* Limit maximum width */
+    margin: 0 auto;  /* Center horizontally */
 }
+
+/* Styles for individual posts */
 .Post {
-    flex-direction: column;
-    max-width: 100%;
-    background-color: var(--post-bg-color);
-    padding-left: 5px;
-    padding-right: 5px;
-    font-size: 15px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    box-shadow: var(--post-shadow);
-    border-radius: var(--post-border-radius);
+    display: flex;  /* Use flexbox layout */
+    flex-direction: column;  /* Stack flex items vertically */
+    max-width: 100%;  /* Ensure post doesn't overflow its container */
+    margin: 10px 0;  /* Add vertical spacing between posts */
+    background-color: var(--post-bg-color);  /* Set background color */
+    box-shadow: var(--post-shadow);  /* Apply shadow */
+    border-radius: var(--post-border-radius);  /* Round the corners */
 }
+
+/* Header and footer style for individual posts */
+.Post > header, .Post footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Define direction for header items in individual posts */
 .Post > header {
     flex-direction: row;
-    padding: 3px 3px 3px 3px;
-    justify-content: space-between;
-    align-items: center;
-}
-.Post footer {
-    flex-direction: row;
-    padding: 3px 3px 3px 3px;
-    justify-content: space-between;
-    align-items: center;
-}
-.Post-content {
-    flex-direction: column;
-}
-.Post-content img {
-    max-height: 600px;
-    width: fit-content;
-    max-width: 100%;
-    height: fit-content;
-    align-self: center;
-}
-.Post > header > img {
-    width: 25px;
-    height: fit-content;
-    align-items: center;
-    padding: 10px 10px 10px 10px;
-}
-.Post > footer > button > img{
-    width: 25px;
-    height: fit-content;
-    align-items: center;
-}
-.Post > footer > button {
-    background-color: var(--like-button-color);
-    border: none;
-    padding: 10px 10px 10px 10px;
-    border-radius: 22.5px;
-}
-.Post > footer > button:hover {
-    transition-duration: 0.3s;
-    background-color: var(--like-button-color-hover);
-}
-.Image-container img {
-    width: 50px;
-    height: fit-content;
-    align-items: center;
 }
 
-@media screen and (max-width: 1000px){
-    .Left-padding {
-        min-width: 0;
+/* Style for profile images in post header */
+.Post > header img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Ensure images inside posts are responsive */
+.Post img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Adjust margin for paragraphs that directly follow an image inside a post */
+.Post img + p {
+    margin-top: 20px;
+}
+
+/* Style paragraphs after a highlighted class within a post */
+.Post .highlighted ~ p {
+    text-decoration: underline dashed;
+}
+
+/* Style for images inside post footer buttons */
+.Post footer button img {
+    width: 24px;
+    height: 24px;
+}
+
+.header-button {
+    background-color: var(--header-button-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: var(--paddings-border-radius);
+    transition: background-color 0.3s;
+}
+
+.header-button:hover {
+    background-color: var(--header-button-color-hover);
+}
+
+.header-button img {
+    width: 24px;
+    height: 24px;
+}
+
+.textarea-group {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+
+.textarea-group textarea {
+    min-height: 100px;
+    background-color: var(--paddings-color);
+    padding: 5px;
+    border-radius: var(--paddings-border-radius);
+    box-shadow: var(--paddings-shadow);
+    border: none;
+    color: var(--text-color);
+    resize: none;
+}
+
+header .Image-container img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 35px;
+    margin-top: 10px;
+    transition: box-shadow 0.4s, transform 0.4s;
+}
+
+header .Image-container:hover img {
+    box-shadow: 0 0 40px rgba(0, 0, 255, 0.9), 0 0 10px rgba(0, 0, 255, 0.8);
+    transform: scale(1.05);
+    will-change: box-shadow, transform;
+}
+
+.nav-link {
+    display: inline-block;
+    font-family: 'Unbounded', monospace;
+    padding: 15px 25px;
+    background-color: transparent;
+    text-decoration: none;
+    border: solid transparent;
+    color: white;
+    transition: text-shadow 0.2s ease;
+}
+
+.nav-link:hover {
+    text-shadow: 0 0 5px #800080, 0 0 15px #800080, 0 0 25px #800080, 0 0 35px #800080, 0 0 50px #800080;
+    background-color: rgba(128, 0, 128, 0.2);
+    border-color: #800080;
+}
+
+.nav-links-wrapper {
+    display: flex;
+}
+
+.Post footer button.indexlike {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transform: scale(1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.Post footer button.indexlike:hover {
+    background-color: rgba(0, 0, 255, 0.3);
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 0, 255, 0.5);
+}
+
+.AddPost-form-container {
+    max-width: 600px;
+    min-height: 320px;
+    width: 90%;
+    height: auto;
+    background-color: var(--post-bg-color);
+    margin: 0 auto;
+    box-shadow: var(--post-shadow);
+    padding: 5px;
+    border-radius: var(--post-border-radius);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.AddPost-form-container h2, 
+.AddPost-form-container label, 
+.AddPost-form-container textarea,
+.AddPost-form-container button {
+    margin: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.AddPost-form-container textarea {
+    width: 90%;
+    height: 100px;
+    resize: vertical;
+    padding: 10px;
+}
+
+.AddPost-form-container button {
+    padding: 10px 20px;
+    background-color: rgba(25, 25, 112, 0.75);
+    color: var(--text-color);
+    border: none;
+    border-radius: var(--post-border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.AddPost-form-container button:hover {
+    background-color: rgba(0, 0, 255, 0.7);
+}
+
+.AddPost-form-container .create-post-btn {
+    padding: 10px 20px;
+    background-color: rgba(25, 25, 112, 0.75);
+    color: var(--text-color);
+    border: none;
+    border-radius: var(--post-border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.textarea-group label, 
+.textarea-group textarea {
+    flex: 1;
+    font-size: 1rem;
+    padding: 10px;
+    resize: vertical;
+}
+
+.textarea-group label {
+    margin-right: 1rem;
+}
+
+.blue-link {
+    color: #007BFF;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    transition: text-shadow 0.3s ease;
+    padding: 10px 15px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.blue-link:hover, 
+.blue-link:focus {
+    text-shadow: 0 0 10px #007BFF, 0 0 20px #007BFF, 0 0 30px #007BFF;
+}
+
+.blue-link:focus {
+    outline: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .AddPost-form-container, 
+    .login-box {
+        width: 90vw;
     }
-    .Right-padding {
-        min-width: 0;
+
+    .AddPost-form-container button, 
+    .login-box button {
+        font-size: 0.8rem;
+        padding: 5px 10px;
     }
+}
+
+#Content-container {
+    display: flex;
+}
+
+.Left-padding, 
+.Right-padding {
+    flex: 1;
+    background-color: var(--paddings-color);
+    min-height: 100vh;
+    box-shadow: var(--paddings-shadow);
+    border-radius: var(--paddings-border-radius);
+}
+
+.Left-padding {
+    margin-right: 7px;
+}
+
+.Right-padding {
+    margin-left: 7px;
+}
+
+.login-box input[type="email"],
+.login-box input[type="password"] {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.login-box label {
+    margin-bottom: 0.5rem;
+}
+
+.login-box input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #aaa;
+    border-radius: var(--post-border-radius);
+}
+
+.login-box button {
+    padding: 10px 20px;
+    background-color: rgba(25, 25, 112, 0.75);
+    color: var(--text-color);
+    border: none;
+    border-radius: var(--post-border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.login-box button:hover {
+    background-color: rgba(0, 0, 255, 0.7);
+}
+
+.error-message {
+    margin-top: -10px;
+}
+
+.Form-field {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.Form-field label {
+    width: auto;
+    margin-right: 15px;
+    box-sizing: content-box;
+}
+
+.Form-field input {
+    flex: 1; 
+    width: auto; 
+    box-sizing: border-box;
+    padding: 10px 20px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.login-button {
+    position: relative;
+    top: 270px;
+    height: 50px;
 }

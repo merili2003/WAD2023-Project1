@@ -1,13 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="res/images/favicon.png">
     <link rel="stylesheet" href="res/css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Unbounded">
-    <title>HW1</title>
-  </head>
-  <body>
-  </body>
+    <script src="res/javascript.js" defer></script>
+    <title>Add post</title>
+    <script>
+        function validateForm() {
+            var content = document.getElementById("postContent").value;
+            if (content == "") {
+                alert("Post body must be filled out");
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+<header>
+    <nav class="nav-bar">
+        <div class="nav-links-wrapper">
+            <a href="index.html" class="nav-link">Home</a>
+        </div>
+        <div class="Image-container">
+            <a href="login.html">
+                <img src="res/images/pfp.png" alt="User Profile Picture">
+            </a>
+        </div>
+    </nav>
+</header>
+
+<div class="AddPost-form-container">
+    <h2>Add post</h2>
+    <form id="addBoxForm" action="index.html" method="post" onsubmit="return validateForm()" enctype="multipart/form-data">
+        <div class="Form-field">
+            <label for="postContent" class="field-label">Post body:</label>
+            <textarea id="postContent" name="postContent" required></textarea>
+        </div>
+        <div class="Form-field">
+            <label for="fileInput" class="field-label">Select file:</label>
+            <input type="file" id="fileInput" name="fileInput">
+        </div>
+        <div class="Form-field btn-field">
+            <button class=create-post-btn type="submit">Create post</button>
+        </div>
+    </form>
+</div>
+
+<footer>
+    <!-- Add footer contents if any -->
+</footer>
+
+</body>
+
 </html>
