@@ -1,103 +1,116 @@
+/* Root variables for general theming and consistent style references */
 :root {
-    --text-color: rgb(249, 249, 249);
-    --text-shadow-color: midnightblue;
-    --text-shadow: 3px 3px 4px var(--text-shadow-color);
+    /* Text styles */
+    --text-color: rgb(249, 249, 249);  /* General text color */
+    --text-shadow-color: midnightblue;  /* Color for text shadows */
+    --text-shadow: 3px 3px 4px var(--text-shadow-color);  /* General text shadow style */
 
-    --main-bg-color: black;
-    --main-header-footer-color: rgba(0, 0, 0, 0.75);
-    --main-header-footer-shadow-color: midnightblue;
-    --main-header-footer-shadow: inset 0px 0px 10px 0px var(--main-header-footer-shadow-color);
-    --header-button-color: rgba(0, 0, 0, 0);
-    --header-button-color-hover: rgba(25, 25, 112, 0.75);
-    --header-footer-border-radius: 0px;
+    /* Main background and header/footer styles */
+    --main-bg-color: black;  /* Main background color */
+    --main-header-footer-color: rgba(0, 0, 0, 0.75);  /* Background color for headers/footers */
+    --main-header-footer-shadow-color: midnightblue;  /* Color for header/footer shadows */
+    --main-header-footer-shadow: inset 0px 0px 10px 0px var(--main-header-footer-shadow-color);  /* Header/Footer shadow style */
+    --header-button-color: rgba(0, 0, 0, 0);  /* Initial color for header buttons */
+    --header-button-color-hover: rgba(25, 25, 112, 0.75);  /* Hover color for header buttons */
+    --header-footer-border-radius: 0px;  /* Border radius for headers and footers */
 
-    --paddings-color: rgba(0, 0, 0, 0.25);
-    --paddings-shadow-color: midnightblue;
-    --paddings-shadow: inset 0px 0px 10px 0px var(--paddings-shadow-color);
-    --paddings-border-radius: 5px;
+    /* Padding related styles */
+    --paddings-color: rgba(0, 0, 0, 0.25);  /* Background color for paddings */
+    --paddings-shadow-color: midnightblue;  /* Color for padding shadows */
+    --paddings-shadow: inset 0px 0px 10px 0px var(--paddings-shadow-color);  /* Padding shadow style */
+    --paddings-border-radius: 5px;  /* Border radius for paddings */
 
-    --post-bg-color: rgba(0, 0, 0, 0.5);
-    --post-shadow-color: midnightblue;
-    --post-shadow: inset 0px 0px 10px 0px var(--post-shadow-color);
-    --like-button-color: rgba(0, 0, 0, 0);
-    --like-button-color-hover: rgba(25, 25, 112, 0.75);
-    --post-border-radius: 5px;
+    /* Post related styles */
+    --post-bg-color: rgba(0, 0, 0, 0.5);  /* Post background color */
+    --post-shadow-color: midnightblue;  /* Color for post shadows */
+    --post-shadow: inset 0px 0px 10px 0px var(--post-shadow-color);  /* Post shadow style */
+    --like-button-color: rgba(0, 0, 0, 0);  /* Initial color for like buttons in posts */
+    --like-button-color-hover: rgba(25, 25, 112, 0.75);  /* Hover color for like buttons in posts */
+    --post-border-radius: 5px;  /* Border radius for posts */
 
+    /* Background image for the entire site */
     --background-image: url("../images/space.webp");
 }
 
+/* Styles for the body element */
 body {
-    margin: 0;
-    font-family: 'Unbounded', monospace;
-    background-image: var(--background-image);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100vw 100vh;
-    background-color: var(--main-bg-color);
-    overflow-y: scroll;
-    color: var(--text-color);
-    text-shadow: var(--text-shadow);
-    display: block;
+    margin: 0;  /* Remove default margin */
+    font-family: 'Unbounded', monospace;  /* Set default font family */
+    background-image: var(--background-image);  /* Use the background image defined in root */
+    background-repeat: no-repeat;  /* Ensure the background image doesn't repeat */
+    background-attachment: fixed;  /* Fix background position during scrolling */
+    background-size: 100vw 100vh;  /* Adjust background image size to cover viewport */
+    background-color: var(--main-bg-color);  /* Set background color */
+    overflow-y: scroll;  /* Allow vertical scrolling */
+    color: var(--text-color);  /* Apply text color */
+    text-shadow: var(--text-shadow);  /* Apply text shadow */
+    display: block;  /* Ensure the body displays as a block element */
 }
 
-
+/* Styles for the navigation bar and footer */
 .nav-bar, body > footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px;
-    background-color: var(--main-header-footer-color);
-    box-shadow: var(--main-header-footer-shadow);
-    border-radius: var(--header-footer-border-radius);
+    display: flex;  /* Use flexbox layout */
+    justify-content: space-between;  /* Space out flex items on the main axis */
+    align-items: center;  /* Center items vertically */
+    padding: 5px;  /* Add padding */
+    background-color: var(--main-header-footer-color);  /* Apply background color */
+    box-shadow: var(--main-header-footer-shadow);  /* Apply shadow */
+    border-radius: var(--header-footer-border-radius);  /* Round the corners */
 }
 
+/* Styles for the navigation links */
 .nav-link {
-    text-decoration: none;
-    color: var(--text-color);
-    padding: 0 10px;
-    transition: text-shadow 0.3s, color 0.3s;
+    text-decoration: none;  /* Remove underlines */
+    color: var(--text-color);  /* Set text color */
+    padding: 0 10px;  /* Add horizontal padding */
+    transition: text-shadow 0.3s, color 0.3s;  /* Smoothly transition shadow and color on hover */
 }
 
+/* Styles for hovered or focused navigation links and blue links */
 .nav-link:hover, .blue-link:focus {
-    text-shadow: 0 0 20px var(--text-shadow-color), 0 0 10px var(--text-shadow-color);
-    color: lightskyblue;
+    text-shadow: 0 0 20px var(--text-shadow-color), 0 0 10px var(--text-shadow-color);  /* Apply glowing text shadow */
+    color: lightskyblue;  /* Change the text color */
 }
 
+/* Styles for the container wrapping navigation links */
 .nav-links-wrapper {
-    display: flex;
-    flex-wrap: wrap;
+    display: flex;  /* Use flexbox layout */
+    flex-wrap: wrap;  /* Allow items to wrap to next line if necessary */
 }
 
-
+/* Styles for the container holding posts */
 .Posts-container {
-    display: flex;
-    flex-direction: column;
-    width: 70vw;
-    max-width: 600px;
-    margin: 0 auto;
+    display: flex;  /* Use flexbox layout */
+    flex-direction: column;  /* Stack flex items vertically */
+    width: 70vw;  /* Set width relative to viewport width */
+    max-width: 600px;  /* Limit maximum width */
+    margin: 0 auto;  /* Center horizontally */
 }
 
+/* Styles for individual posts */
 .Post {
-    display: flex;
-    flex-direction: column;
-    max-width: 100%;
-    background-color: var(--post-bg-color);
-    margin: 5px 0;
-    box-shadow: var(--post-shadow);
-    padding: 5px;
-    border-radius: var(--post-border-radius);
+    display: flex;  /* Use flexbox layout */
+    flex-direction: column;  /* Stack flex items vertically */
+    max-width: 100%;  /* Ensure post doesn't overflow its container */
+    margin: 10px 0;  /* Add vertical spacing between posts */
+    background-color: var(--post-bg-color);  /* Set background color */
+    box-shadow: var(--post-shadow);  /* Apply shadow */
+    border-radius: var(--post-border-radius);  /* Round the corners */
 }
 
+/* Header and footer style for individual posts */
 .Post > header, .Post footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+/* Define direction for header items in individual posts */
 .Post > header {
     flex-direction: row;
 }
 
+/* Style for profile images in post header */
 .Post > header img {
     width: 40px;
     height: 40px;
@@ -105,21 +118,23 @@ body {
     margin-right: 10px;
 }
 
+/* Ensure images inside posts are responsive */
 .Post img {
     max-width: 100%;
     height: auto;
 }
 
-/* Adjacent Sibling Selector: Change the margin-top of any paragraph that directly follows an image inside .Post */
+/* Adjust margin for paragraphs that directly follow an image inside a post */
 .Post img + p {
     margin-top: 20px;
 }
 
-/* General Sibling Selector: Any paragraph after a .highlighted class within .Post will have a dashed underline */
+/* Style paragraphs after a highlighted class within a post */
 .Post .highlighted ~ p {
     text-decoration: underline dashed;
 }
 
+/* Style for images inside post footer buttons */
 .Post footer button img {
     width: 24px;
     height: 24px;
@@ -159,22 +174,6 @@ body {
     resize: none;
 }
 
-@media only screen and (max-width: 500px) {
-    body {
-        font-size: 12px;
-    }
-
-    .nav-link {
-        padding: 0 5px;
-    }
-
-    .Posts-container {
-        width: 90vw;
-    }
-}
-
-
-
 header .Image-container img {
     width: 40px;
     height: 40px;
@@ -189,8 +188,6 @@ header .Image-container:hover img {
     transform: scale(1.05);
     will-change: box-shadow, transform;
 }
-/* Base Styles */
-
 
 .nav-link {
     display: inline-block;
@@ -235,10 +232,10 @@ header .Image-container:hover img {
 }
 
 .AddPost-form-container {
-    max-width: 600px; /* 600px is just an example, you can set it to what looks good for you */
+    max-width: 600px;
     min-height: 320px;
     width: 90%;
-    height: auto; /* Let's make it auto so it fits content */
+    height: auto;
     background-color: var(--post-bg-color);
     margin: 0 auto;
     box-shadow: var(--post-shadow);
@@ -280,7 +277,6 @@ header .Image-container:hover img {
     transition: background-color 0.3s ease;
 }
 
-
 .AddPost-form-container button:hover {
     background-color: rgba(0, 0, 255, 0.7);
 }
@@ -297,7 +293,6 @@ header .Image-container:hover img {
     margin-left: auto;
     margin-right: auto;
 }
-
 
 .textarea-group label, 
 .textarea-group textarea {
@@ -367,10 +362,9 @@ header .Image-container:hover img {
 
 .login-box input[type="email"],
 .login-box input[type="password"] {
-    width: 100%; /* Adjust this value to your desired width */
-    box-sizing: border-box; /* Ensures padding doesn't affect the total width */
+    width: 100%;
+    box-sizing: border-box;
 }
-
 
 .login-box label {
     margin-bottom: 0.5rem;
@@ -417,7 +411,6 @@ header .Image-container:hover img {
     margin-right: 15px;
     box-sizing: content-box;
 }
-
 
 .Form-field input {
     flex: 1; 
