@@ -140,6 +140,7 @@ body {
     height: 24px;
 }
 
+/* General style for header buttons */
 .header-button {
     background-color: var(--header-button-color);
     border: none;
@@ -147,22 +148,27 @@ body {
     border-radius: var(--paddings-border-radius);
     transition: background-color 0.3s;
 }
-
+    
+    
 .header-button:hover {
     background-color: var(--header-button-color-hover);
 }
-
+    
+    
 .header-button img {
     width: 24px;
     height: 24px;
 }
-
+    
+    
+/* Styling for textarea groups */
 .textarea-group {
     display: flex;
     flex-direction: column;
     margin: 10px 0;
 }
-
+    
+    
 .textarea-group textarea {
     min-height: 100px;
     background-color: var(--paddings-color);
@@ -173,7 +179,9 @@ body {
     color: var(--text-color);
     resize: none;
 }
-
+    
+    
+/* Profile image styling in header with transition effects */
 header .Image-container img {
     width: 40px;
     height: 40px;
@@ -182,13 +190,17 @@ header .Image-container img {
     margin-top: 10px;
     transition: box-shadow 0.4s, transform 0.4s;
 }
-
+    
+    
+/* Hover effect for profile image in header */
 header .Image-container:hover img {
     box-shadow: 0 0 40px rgba(0, 0, 255, 0.9), 0 0 10px rgba(0, 0, 255, 0.8);
     transform: scale(1.05);
     will-change: box-shadow, transform;
 }
-
+    
+    
+/* Base styles for navigation links */
 .nav-link {
     display: inline-block;
     font-family: 'Unbounded', monospace;
@@ -199,17 +211,23 @@ header .Image-container:hover img {
     color: white;
     transition: text-shadow 0.2s ease;
 }
-
+    
+    
+/* Hover effects for navigation links */
 .nav-link:hover {
     text-shadow: 0 0 5px #800080, 0 0 15px #800080, 0 0 25px #800080, 0 0 35px #800080, 0 0 50px #800080;
     background-color: rgba(128, 0, 128, 0.2);
     border-color: #800080;
 }
-
+    
+    
+/* Container style for navigation links */
 .nav-links-wrapper {
     display: flex;
 }
-
+    
+    
+/* Styling for like button in post footer */
 .Post footer button.indexlike {
     background: none;
     border: none;
@@ -224,13 +242,17 @@ header .Image-container:hover img {
     transform: scale(1);
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
-
+    
+    
+/* Hover effect for like button in post footer */
 .Post footer button.indexlike:hover {
     background-color: rgba(0, 0, 255, 0.3);
     transform: scale(1.1);
     box-shadow: 0 0 15px rgba(0, 0, 255, 0.5);
 }
-
+    
+    
+/* Styling for the container of the form to add a post */
 .AddPost-form-container {
     max-width: 600px;
     min-height: 320px;
@@ -251,22 +273,28 @@ header .Image-container:hover img {
     align-items: center;
     padding-top: 20px;
 }
-
-.AddPost-form-container h2, 
-.AddPost-form-container label, 
+    
+    
+/* Styling for elements inside the form to add a post */
+.AddPost-form-container h2,
+.AddPost-form-container label,
 .AddPost-form-container textarea,
 .AddPost-form-container button {
     margin: 0.5rem;
     font-size: 1.5rem;
 }
-
+    
+    
+/* Adjustments to the textarea inside the add post form */
 .AddPost-form-container textarea {
     width: 90%;
     height: 100px;
     resize: vertical;
     padding: 10px;
 }
-
+    
+    
+/* Button styling inside the add post form */
 .AddPost-form-container button {
     padding: 10px 20px;
     background-color: rgba(25, 25, 112, 0.75);
@@ -276,11 +304,15 @@ header .Image-container:hover img {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-
+    
+    
+/* Hover effect for buttons inside the add post form */
 .AddPost-form-container button:hover {
     background-color: rgba(0, 0, 255, 0.7);
 }
-
+    
+    
+/* Style for the create post button */
 .AddPost-form-container .create-post-btn {
     padding: 10px 20px;
     background-color: rgba(25, 25, 112, 0.75);
@@ -293,19 +325,23 @@ header .Image-container:hover img {
     margin-left: auto;
     margin-right: auto;
 }
-
-.textarea-group label, 
+    
+    
+/* Styling for labels and textareas inside textarea group */
+.textarea-group label,
 .textarea-group textarea {
     flex: 1;
     font-size: 1rem;
     padding: 10px;
     resize: vertical;
 }
-
+    
+    
+/* Adjust spacing between label and textarea */
 .textarea-group label {
     margin-right: 1rem;
 }
-
+/* Base style for blue-colored links */
 .blue-link {
     color: #007BFF;
     text-decoration: none;
@@ -316,34 +352,47 @@ header .Image-container:hover img {
     display: inline-block;
     cursor: pointer;
 }
-
-.blue-link:hover, 
+    
+    
+/* Hover and focus effects for the blue links */
+.blue-link:hover,
 .blue-link:focus {
     text-shadow: 0 0 10px #007BFF, 0 0 20px #007BFF, 0 0 30px #007BFF;
 }
-
+    
+    
+/* Remove focus outline for blue links for better visual appeal */
 .blue-link:focus {
     outline: none;
 }
-
+    
+    
+/* Responsive styles for screens up to 600px width */
 @media only screen and (max-width: 600px) {
-    .AddPost-form-container, 
+    /* Adjust widths for add post and login containers */
+    .AddPost-form-container,
     .login-box {
         width: 90vw;
     }
-
-    .AddPost-form-container button, 
+    
+    
+    /* Adjust font size and padding for buttons inside these containers on smaller screens */
+    .AddPost-form-container button,
     .login-box button {
         font-size: 0.8rem;
         padding: 5px 10px;
     }
 }
-
+    
+    
+/* Flex container style for content */
 #Content-container {
     display: flex;
 }
-
-.Left-padding, 
+    
+    
+/* Base styling for left and right paddings in the layout */
+.Left-padding,
 .Right-padding {
     flex: 1;
     background-color: var(--paddings-color);
@@ -351,32 +400,44 @@ header .Image-container:hover img {
     box-shadow: var(--paddings-shadow);
     border-radius: var(--paddings-border-radius);
 }
-
+    
+    
+/* Spacing adjustment for left padding */
 .Left-padding {
     margin-right: 7px;
 }
-
+    
+    
+/* Spacing adjustment for right padding */
 .Right-padding {
     margin-left: 7px;
 }
-
+    
+    
+/* Input styles specifically for email and password fields in login box */
 .login-box input[type="email"],
 .login-box input[type="password"] {
     width: 100%;
     box-sizing: border-box;
 }
-
+    
+    
+/* Spacing for labels inside login box */
 .login-box label {
     margin-bottom: 0.5rem;
 }
-
+    
+    
+/* Base input styles inside login box */
 .login-box input {
     padding: 10px;
     font-size: 1rem;
     border: 1px solid #aaa;
     border-radius: var(--post-border-radius);
 }
-
+    
+    
+/* Styles for the login button inside the login box */
 .login-box button {
     padding: 10px 20px;
     background-color: rgba(25, 25, 112, 0.75);
@@ -390,39 +451,51 @@ header .Image-container:hover img {
     left: 50%;
     transform: translateX(-50%);
 }
-
+    
+    
+/* Hover effect for the login button */
 .login-box button:hover {
     background-color: rgba(0, 0, 255, 0.7);
 }
-
+    
+    
+/* Styling for error messages */
 .error-message {
     margin-top: -10px;
 }
-
+    
+    
+/* Flex layout for form fields */
 .Form-field {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 0;
 }
-
+    
+    
+/* Label styling inside form fields */
 .Form-field label {
     width: auto;
     margin-right: 15px;
     box-sizing: content-box;
 }
-
+    
+    
+/* Input styles inside form fields */
 .Form-field input {
-    flex: 1; 
-    width: auto; 
+    flex: 1;
+    width: auto;
     box-sizing: border-box;
     padding: 10px 20px;
     margin-bottom: 0;
     padding-bottom: 0;
 }
-
+    
+    
+/* Positional styles for the login button */
 .login-button {
     position: relative;
     top: 270px;
     height: 50px;
-}
+}    
