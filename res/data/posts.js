@@ -1,3 +1,6 @@
+//validated at https://jsonlint.com
+// gist: <script src="https://gist.github.com/koodikirjutaja/eb5d36442a1ff84bde1f4aec5b41ad21.js"></script>
+
 let data =
 {
     "Posts" : [
@@ -35,6 +38,55 @@ let data =
             "image" : "",
             "alt-image" : "",
             "body" : "#iwadabest"
+        },
+        {
+            "pfp": "res/images/pfp.png",
+            "date": "May 15, 2022",
+            "image": "res/images/space6.png",
+            "alt-image": "Astronaut found life",
+            "body": "#selfie"
+        },
+        {
+            "pfp": "res/images/pfp.png",
+            "date": "Jul 04, 2022",
+            "image": "res/images/space7.png",
+            "alt-image": "Space Station",
+            "body": "Life aboard the International Space Station."
+        },
+        {
+            "pfp": "res/images/pfp.png",
+            "date": "Sep 10, 2021",
+            "image": "res/images/space8.png",
+            "alt-image": "Moon Landing",
+            "body": "One small step for man, one giant leap for mankind."
+        },
+        {
+            "pfp": "res/images/pfp.png",
+            "date": "Feb 14, 2022",
+            "image": "res/images/space9.png",
+            "alt-image": "Star Cluster",
+            "body": "Close-up view of a stunning star cluster."
+        },
+        {
+            "pfp": "res/images/pfp.png",
+            "date": "Mar 21, 2023",
+            "image": "",
+            "alt-image": "Deep quote",
+            "body": "Deep space exploration reveals the universe's mysteries."
+        },
+        {
+            "pfp": "res/images/pfp.png",
+            "date": "Apr 01, 2023",
+            "image": "",
+            "alt-image": "",
+            "body": "#work #BoredOfThisEarth"
+        },
+        {
+            "pfp": "res/images/pfp.png",
+            "date": "Jun 30, 2023",
+            "image": "res/images/space12.jpg",
+            "alt-image": "Comet Tail",
+            "body": "A comet passing by, trailing a magnificent tail."
         }
     ]
 };

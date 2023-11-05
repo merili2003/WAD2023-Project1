@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,67 +7,37 @@
     <link rel="stylesheet" href="res/css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Unbounded">
     <title>HW1</title>
+    <script type="text/javascript" src="res/js/javascript.js"></script>
     <script type="text/javascript" src="res/data/posts.js"></script>
-    <script type="text/javascript" src="res/js/getPosts.js"></script>
 </head>
-
 <body>
-    <header class="nav-bar">
-        <div class="nav-links-wrapper">
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="addPost.html" class="nav-link">Add Post</a>
+<header class="nav-bar">
+    <div class="nav-links-wrapper">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="addPost.html" class="nav-link">Add Post</a>
+    </div>
+    <div class="Image-container">
+        <img src="res/images/pfp.png" alt="Profile picture" id="profilePic" style="cursor: pointer;">
+        <div id="dropdownMenu" class="dropdown-content">
+            <a>John Doe</a>
+            <a >johndoe@ut.ee</a>
+            <a href=login.html>Logout</a>
         </div>
-        <div class="Image-container">
-            <a href="login.html">
-                <img src="res/images/pfp.png" alt="Profile picture">
-            </a>
-        </div>
-    </header>
+    </div>
+</header>
 
-    <div id="Content-container">
-        <div class="Left-padding"></div>
+<div id="Content-container">
+    <div class="Left-padding"></div>
 
-        <div class="Posts-container">
-            <!--
-            <div class="Post">
-                <header class="post-header">
-                    <img src="res/images/pfp.png" alt="Profile picture">
-                    <p>Dec 24, 1530</p>
-                </header>
-                <div class="Post-content">
-                    <img src="res/images/starfall.jpg" alt="Starfall">
-                    <p>ancient photo captured by my granny</p>
-                </div>
-                <footer>
-                    <button class="indexlike">
-                        <img src="res/images/like.png" alt="Like">
-                    </button>
-                </footer>
-            </div>
-
-            <div class="Post">
-                <header>
-                    <img src="res/images/pfp.png" alt="Profile picture">
-                    <p>Oct 02, 2023</p>
-                </header>
-                <div class="Post-content">
-                    <p>#iwadabest</p>
-                </div>
-                <footer>
-                    <button class="indexlike">
-                        <img src="res/images/like.png" alt="Like">
-                    </button>
-                </footer>
-            </div>
-            -->
-        </div>
-
-        <div class="Right-padding"></div>
+    <div class="Posts-container">
+        <!-- Posts will be inserted here -->
     </div>
 
-    <footer>
-        <p>&copy; WAD Galaxy. All rights reserved.</p>
-    </footer>
-</body>
+    <div class="Right-padding"></div>
+</div>
 
+<footer>
+    <p>&copy; WAD Galaxy. All rights reserved.</p>
+</footer>
+</body>
 </html>
