@@ -3,11 +3,16 @@ document.addEventListener("DOMContentLoaded", function () {
     // Validate login form and attach event listener for dropdown menu
     initializePage();
 
-    // Fetch posts from a local file (posts.js)
-    displayPosts();
+    // Check if you want to display local posts or Gist posts
+    const displayLocalPosts = true; // Set this to true for local posts, false for Gist posts
 
-    // Placeholder for fetching posts from an online source
-    // fetchPostsFromGist();
+    if (displayLocalPosts) {
+        // Fetch and display local posts from JSON data
+        fetchPosts();
+    } else {
+        // Fetch and display posts from Gists
+        fetchPostsGist();
+    }
 });
 
 //Initializes the login form validation and dropdown menu functionality.
@@ -52,47 +57,61 @@ function validateLoginForm() {
     return true;
 }
 
-//Reads the posts from data.Posts (assuming data is the object from posts.js) and creates HTML elements for each post.
-function displayPosts() {
-    // Assuming 'data' is the global object from posts.js
+// Function to display posts from JSON data
+function fetchPosts(data) {
+    fetch("res/data/posts.json") // Assuming the file is in the "res/data" directory
+        .then(response => response.json())
+        .then(data => {
+            displayPosts(data);
+        })
+        .catch(error => console.error('Error fetching data:', error));
+}
+
+// Generates the HTML structure for each post.
+function createPostElement(post) {
+    // Create a new HTML element to represent a post
+    const postContainer = document.createElement('div');
+    postContainer.className = 'Post'; // Assign a CSS class to style the post container
+
+    // Set the HTML content for the post container
+    postContainer.innerHTML = `
+        <header class="post-header">
+            <img src="${post.pfp}" alt="Profile picture"> <!-- Display the profile picture -->
+            <p>${post.date}</p> <!-- Display the post date -->
+        </header>
+        <div class="Post-content">
+            ${post.image ? `<img src="${post.image}" alt="${post['alt-image']}">` : ''}
+            <p>${post.body}</p> <!-- Display the post content -->
+        </div>
+    `;
+
+    // Append the post container to the 'Posts-container' in the HTML document
+    document.querySelector('.Posts-container').appendChild(postContainer);
+}
+
+// Function to display posts from JSON data
+function displayPosts(data) {
+    // Check if 'data' is a valid JSON object and contains a 'Posts' property
     if (data && data.Posts) {
+        // Iterate over each post in the 'Posts' array
         data.Posts.forEach(post => {
-            createPostElement(post);
+            createPostElement(post); // Call the 'createPostElement' function to create and display the post
         });
     }
 }
 
-//Generates the HTML structure for each post.
-function createPostElement(post) {
-    const postContainer = document.createElement('div');
-    postContainer.className = 'Post';
-    postContainer.innerHTML = `
-        <header class="post-header">
-            <img src="${post.pfp}" alt="Profile picture">
-            <p>${post.date}</p>
-        </header>
-        <div class="Post-content">
-            ${post.image ? `<img src="${post.image}" alt="${post['alt-image']}">` : ''}
-            <p>${post.body}</p>
-        </div>
-    `;
-    document.querySelector('.Posts-container').appendChild(postContainer);
-}
 
+// Function to fetch and display posts from the GitHub Gist URL
+function fetchPostsGist() {
+    // Define the Gist URL
+    const gistUrl = 'https://gist.githubusercontent.com/koodikirjutaja/eb5d36442a1ff84bde1f4aec5b41ad21/raw';
 
-
-// Placeholder function for fetching posts from an online source
-// Fetch posts from the GitHub Gist
-function fetchPostsFromGist() {
-    const gistUrl = 'https://gist.githubusercontent.com/koodikirjutaja/eb5d36442a1ff84bde1f4aec5b41ad21/raw/YOUR_RAW_GIST_URL_HERE';
-
-    fetch(gistUrl)
-        .then(response => response.json())
-        .then(data => {
-            // Assuming data structure matches what your application expects
-            data.Posts.forEach(post => {
-                createPostElement(post);
-            });
+    // Send an HTTP GET request to the Gist URL using Axios
+    axios.get(gistUrl)
+        .then(response => {
+            const data = response.data; // Parse JSON data from the response
+            displayPosts(data); // Display the parsed data as posts
         })
-        .catch(error => console.error('Error fetching data:', error));
+        .catch(error => console.error('Error fetching data:', error)); // Handle any errors that occur during the request
 }
+
